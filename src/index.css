@@ -27,6 +27,10 @@ code {
   background-color: #80808082;
 }
 
+.hide {
+  display: none;
+}
+
 .message {
   width: 200px;
   height: 100px;
@@ -34,5 +38,17 @@ code {
   background-color: fuchsia;
   padding: 16px;
   border-radius: 4px;
+}
+
+.desktop {
+  height: 1000px;
+  width: 1000px;
+  background-color: darkcyan;
+}
+
+.mobile {
+  height: 300px;
+  width: 300px;
+  background-color: gold;
 }
 
