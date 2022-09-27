@@ -1,36 +1,29 @@
 import { Component } from 'react';
-import Counter from './components/counter';
-import Timer from './components/timer';
+import CardList from './components/cardList';
+import UserPage from './components/userPage';
 
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			isFinished: false,
-			isButtonClickable: false,
-		};
+			currentUserId: null,
+		}
 	}
 	
-	setIsButtonClickable = () => {
-		this.setState({
-			isButtonClickable: !this.state.isButtonClickable,
-		});
-	}
-	
-	setFinished = () => {
-		this.setState({
-			isFinished: true,
-		})
-	}
+	setCurrentUserId = (id) => {
+		this.setState({ currentUserId: id })
+	};
 	
 	render() {
-		console.log('Log ::: this.state ::: ', this.state);
-		const { isFinished, isButtonClickable } = this.state;
+		const { state: { currentUserId }} = this;
 		return(
-			<div>
-				<Timer setFinish={this.setFinished} setIsButtonClickable={this.setIsButtonClickable} />
-				<Counter isClickable={isButtonClickable} isFinished={isFinished} title="First" initial={0} />
-			</div>
+			<>
+				{!currentUserId ?
+					<CardList setCurrentUserId={this.setCurrentUserId} />
+					:
+					<UserPage setCurrentUserId={this.setCurrentUserId} currentUserId={currentUserId}/>
+				}
+			</>
 		)
 	}
 };
