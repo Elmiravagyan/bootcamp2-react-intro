@@ -36,3 +36,47 @@ code {
   border-radius: 4px;
 }
 
+.icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 270px;
+}
+
+.galleryItem {
+  height: 200px;
+  width: auto;
+  max-width: 400px;
+}
+
+.divisions {
+  display: flex;
+  flex-direction: column;
+}
+
+.division {
+  padding: 8px;
+  border: 1px solid steelblue;
+  border-radius: 4px;
+  margin: 16px;
+}
+
+.content {
+  display: flex;
+  gap: 16px;
+}
+
+.paginationWrapper {
+  display: flex;
+  width: 100vw;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.active {
+  background-color: lawngreen;
+  border: none;
+}
+
